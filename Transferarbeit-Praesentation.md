@@ -10,7 +10,7 @@ Hypothese
 - Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007, alle Länder
 - Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007
 - Bevölkerungsentwicklung Schweiz 1952 - 2007
-- Zusammenhang der Zufriedenheit 
+- Zusammenhang der Zufriedenheit mit dem BIP pro Kopf
 
 
 
@@ -30,7 +30,6 @@ Summary aus gapminder
 
 ```r
 library(gapminder)
-attach(gapminder)
 summary(gapminder)
 ```
 
@@ -56,7 +55,16 @@ summary(gapminder)
 Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007
 ========================================================
 
-![plot of chunk unnamed-chunk-2](Transferarbeit-Praesentation-figure/unnamed-chunk-2-1.png)
+<img src="Transferarbeit-Praesentation-figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="60%" />
+
+
+
+Zusammenhang der Zufriedenheit mit dem BIP pro Kopf
+========================================================
+
+<img src="Transferarbeit-Praesentation-figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="60%" />
+
+
 
 
 
@@ -72,20 +80,9 @@ Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007
 
 ```
 processing file: Transferarbeit-Praesentation.Rpres
-The following objects are masked from gapminder (pos = 3):
-
-    continent, country, gdpPercap, lifeExp, pop, year
-
-The following objects are masked from gapminder (pos = 4):
-
-    continent, country, gdpPercap, lifeExp, pop, year
-
-The following objects are masked from gapminder (pos = 5):
-
-    continent, country, gdpPercap, lifeExp, pop, year
-
-Quitting from lines 53-60 (Transferarbeit-Praesentation.Rpres) 
-Fehler in switzerland$year : $ operator is invalid for atomic vectors
-Ruft auf: knit ... withCallingHandlers -> withVisible -> eval -> eval -> plot
+Quitting from lines 64-67 (Transferarbeit-Praesentation.Rpres) 
+Fehler in plot(x = data2017$Happiness.Score, y = data2017$Economy..GDP.per.Capita.,  : 
+  formales Argument "y" passt zu mehreren gegebenen Argumenten
+Ruft auf: knit ... handle -> withCallingHandlers -> withVisible -> eval -> eval
 Ausführung angehalten
 ```
