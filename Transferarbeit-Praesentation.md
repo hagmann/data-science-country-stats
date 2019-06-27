@@ -1,4 +1,4 @@
-BIP pro Kopf Analyse 
+Analyse BIP pro Kopf, Zusammenhang zur Zufriedenheit
 ========================================================
 author: Simon Hagmann
 date: 27.06.2019
@@ -8,9 +8,12 @@ Hypothese
 ========================================================
 
 - Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007, alle Länder
-- Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007
+- Entwicklung der Lebenserwartung Schweiz und USA 1952 - 2007
 - Bevölkerungsentwicklung Schweiz 1952 - 2007
 - Zusammenhang der Zufriedenheit mit dem BIP pro Kopf
+- Top 10 Länder, BIP pro Kopf
+- Zusammenhang zwischen Zufriedenheit und Freiheit
+
 
 
 
@@ -73,16 +76,22 @@ Zusammenhang der Zufriedenheit mit dem BIP pro Kopf
 Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007
 ========================================================
 
+<img src="Transferarbeit-Praesentation-figure/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="60%" />
 
+
+
+
+
+Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007
+========================================================
 
 
 
 
 ```
 processing file: Transferarbeit-Praesentation.Rpres
-Quitting from lines 64-67 (Transferarbeit-Praesentation.Rpres) 
-Fehler in plot(x = data2017$Happiness.Score, y = data2017$Economy..GDP.per.Capita.,  : 
-  formales Argument "y" passt zu mehreren gegebenen Argumenten
-Ruft auf: knit ... handle -> withCallingHandlers -> withVisible -> eval -> eval
+Quitting from lines 79-83 (Transferarbeit-Praesentation.Rpres) 
+Fehler in switzerland$year : $ operator is invalid for atomic vectors
+Ruft auf: knit ... withCallingHandlers -> withVisible -> eval -> eval -> plot
 Ausführung angehalten
 ```

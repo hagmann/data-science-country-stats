@@ -31,18 +31,6 @@ hist(log(pop))
 plot(x=lifeExp,y=log(gdpPercap),main="Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007, alle Länder", xlab="Lebenserwartung in Jahren",ylab="BIP pro Kopf", col="black")
 
 
-# GDP pro Kontinent
-plot(x=continent,y=gdpPercap)
-
-
-
-# Top 10 GDP - Country, 2007
-rowsOnly2007 <- filter(gapminder,gapminder$year == "2007")
-rowsOnly2007 <- rowsOnly2007[order(-rowsOnly2007$gdpPercap),]
-top10gdp <- head(rowsOnly2007)
-
-
-
 
 # Lebenserwartung Schweiz 
 # Filter specific data
@@ -57,9 +45,11 @@ legend("topleft",
 
 
 # TODO: plot 2 layer on the same line chart
-ggplot(gapminder, aes(x=gapminder$country)) +
-  geom_line(aes(y=gapminder$lifeExp), colour="red") +
-  geom_line(aes(y=gapminder$lifeExp), colour="green")
+ggplot(gapminder, aes(x=gapminder$year)) +
+  geom_line(aes(y=switzerland$lifeExp), colour="red") +
+  geom_line(aes(y=usa$lifeExp), colour="green")
+
+
 
 
 # Bevölkerungsentwicklung
@@ -67,8 +57,22 @@ plot(x=switzerland$year,y=switzerland$pop,type="l",main="Bevölkerungsentwicklun
 
 
 
-
 # weitere Datenquelle
 data2017 <- read.csv("2017.csv")
 head(data2017)
 plot(x=data2017$Happiness.Score,y=data2017$Economy..GDP.per.Capita.,main="Zusammenhang der Zufriedenheit mit dem BIP pro Kopf",xlab="Zufriedenheits-Index",ylab="BIP pro Kopf")
+
+
+# Top 10 GDP - Country, 2017
+data2017_sorted <- data2017[order(-data2017$Economy..GDP.per.Capita.),]
+data2017_sorted <- head(data2017_sorted,n=10L)data2017_sorted
+data2017_sorted
+barplot(data2017_sorted$Economy..GDP.per.Capita., main="Top 10 Länder, BIP pro Kopf", names.arg=data2017_sorted$Country)
+
+
+# Zusammenhang zwischen Korruption und Zufriedenheits-Index
+plot(x=data2017$Happiness.Score,y=log(data2017$Freedom),main="Zusammenhang zwischen Zufriedenheit und Freiheit", xlab="Zufriedenheits-Index",ylab="Freiheits-Index", col="black")
+
+
+
+
