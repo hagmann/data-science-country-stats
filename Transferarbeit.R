@@ -47,8 +47,19 @@ top10gdp <- head(rowsOnly2007)
 # Lebenserwartung Schweiz 
 # Filter specific data
 switzerland <- filter(gapminder, gapminder$country=="Switzerland")
-plot(x=switzerland$year,y=switzerland$lifeExp,type="l",ylim=c(68,100),main="Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007") + geom_bar(stat ="identity") + ylim(NA,100)
+usa <- filter(gapminder, gapminder$country=="United States")
+plot(x=switzerland$year,y=switzerland$lifeExp,type="l",ylim=c(68,100),main="Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007",xlab="Jahr",ylab="Lebenserwartung in Jahren") + geom_bar(stat ="identity") + ylim(NA,100)
+lines(x=usa$year,y=usa$lifeExp,type="l",ylim=c(68,100),main="Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007",xlab="Jahr",ylab="Lebenserwartung in Jahren",col="red") + geom_bar(stat ="identity") + ylim(NA,100)
+legend("topleft",
+       legend=c("Schweiz","USA"),
+       col=c("black","red"),
+       pch = c(17,19))
 
+
+# TODO: plot 2 layer on the same line chart
+ggplot(gapminder, aes(x=gapminder$country)) +
+  geom_line(aes(y=gapminder$lifeExp), colour="red") +
+  geom_line(aes(y=gapminder$lifeExp), colour="green")
 
 
 # Bevölkerungsentwicklung
@@ -60,4 +71,4 @@ plot(x=switzerland$year,y=switzerland$pop,type="l",main="Bevölkerungsentwicklun
 # weitere Datenquelle
 data2017 <- read.csv("2017.csv")
 head(data2017)
-plot(x=data2017$Happiness.Score,y=data2017$Economy..GDP.per.Capita.,main="Zusammenhang der Zufriedenheit mit dem BIP pro Kopf",xlab="Zufriedenheit",ylab="BIP pro Kopf")
+plot(x=data2017$Happiness.Score,y=data2017$Economy..GDP.per.Capita.,main="Zusammenhang der Zufriedenheit mit dem BIP pro Kopf",xlab="Zufriedenheits-Index",ylab="BIP pro Kopf")
