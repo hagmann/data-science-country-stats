@@ -1,14 +1,11 @@
-install.packages(c("ggplot2","magrittr","tidyr","stringr","dplyr","fread","tidyverse","readr","gapminder"))
-install.packages("dplyr")
+#install.packages(c("ggplot2","magrittr","tidyr","stringr","dplyr","fread","tidyverse","readr","gapminder"))
+#install.packages("dplyr")
 
-library(readxl)
 library(magrittr)
 library(tidyr)
 library(stringr)
 library(fread)
 library(tidyverse)
-
-
 
 library(gapminder)
 library(ggplot2)
@@ -17,8 +14,6 @@ library(dplyr)
 
 summary(gapminder)
 data(gapminder)
-
-summary(gapminder)
 max(gapminder$year)
 
 
@@ -57,7 +52,7 @@ switzerland <- filter(gapminder, gapminder$country=="Switzerland")
 
 
 # Lebenserwartung Schweiz 
-plot(x=switzerland$year,y=switzerland$lifeExp,type="l",ylim=c(68,100),main="Entwicklung der Lebenserwartung in der Schweiz") + geom_bar(stat ="identity") + ylim(NA,100)
+plot(x=switzerland$year,y=switzerland$lifeExp,type="l",ylim=c(68,100),main="Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007") + geom_bar(stat ="identity") + ylim(NA,100)
 
 
 # Bevölkerungsentwicklung
