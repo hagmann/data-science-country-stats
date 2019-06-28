@@ -1,4 +1,4 @@
-Analyse BIP pro Kopf, Zusammenhang zur Zufriedenheit
+Analyse BIP pro Kopf, Zufriedenheit Korrelationsanalyse
 ========================================================
 author: Simon Hagmann
 date: 27.06.2019
@@ -6,15 +6,15 @@ autosize: true
 
 
 
-Hypothese
+Zusammenfassung
 ========================================================
 
-- Top 10 Länder, BIP pro Kopf
+- Top 10 Economies by GDP - 2007
 - Entwicklung der Lebenserwartung Schweiz und USA 1952 - 2007
-- Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007, alle Länder
+- Korrelation Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007, alle Länder
 - Bevölkerungsentwicklung Schweiz 1952 - 2007
-- Zusammenhang der Zufriedenheit mit dem BIP pro Kopf
-- Zusammenhang zwischen Zufriedenheit und Freiheit
+- Korrelation der Zufriedenheit mit dem BIP pro Kopf
+- Korrelation zwischen Zufriedenheit und Freiheit
 
 
 
@@ -71,7 +71,7 @@ Entwicklung der Lebenserwartung Schweiz und USA 1952 - 2007
 
 
 
-Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007
+Korrelation Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007
 ========================================================
 
 <img src="Transferarbeit-Praesentation-figure/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" />
@@ -85,7 +85,7 @@ Bevölkerungsentwicklung Schweiz 1952 - 2007
 
 
 
-Zusammenhang der Zufriedenheit mit dem BIP pro Kopf
+Korrelation der Zufriedenheit mit dem BIP pro Kopf
 ========================================================
 
 <img src="Transferarbeit-Praesentation-figure/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
@@ -95,3 +95,7 @@ Zusammenhang der Zufriedenheit mit dem BIP pro Kopf
 
 
 
+Korrelation zwischen Zufriedenheit und Freiheit
+========================================================
+
+<img src="Transferarbeit-Praesentation-figure/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="100%" />
