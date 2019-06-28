@@ -27,6 +27,7 @@ Verwendete Datensätze
 
 
 
+
 Summary aus gapminder
 ========================================================
 
@@ -89,10 +90,6 @@ Korrelation der Zufriedenheit mit dem BIP pro Kopf
 ========================================================
 
 <img src="Transferarbeit-Praesentation-figure/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
-
-
-
-
 
 
 Korrelation zwischen Zufriedenheit und Freiheit

@@ -1,0 +1,61 @@
+---
+title: "Analyse BIP pro Kopf, Zufriedenheit Korrelationsanalyse"
+output:
+  slidy_presentation: default
+  ioslides_presentation: default
+  beamer_presentation: default
+---
+
+```{r echo = FALSE}
+source("Transferarbeit.R")
+```
+
+
+## Top 10 Economies by GDP - 2007
+
+```{r echo = FALSE}
+top10_gdp_countries
+```
+
+
+
+## Entwicklung der Lebenserwartung Schweiz und USA 1952 - 2007
+
+```{r echo = FALSE}
+ch_usa_plot
+```
+
+
+
+Korrelation Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007
+========================================================
+
+```{r echo = FALSE}
+gdp_lifeexp
+```
+
+
+
+Bevölkerungsentwicklung Schweiz 1952 - 2007
+========================================================
+
+```{r echo = FALSE}
+population_development
+```
+
+
+
+Korrelation der Zufriedenheit mit dem BIP pro Kopf
+========================================================
+
+```{r echo = FALSE}
+happiness_gdp
+```
+
+
+Korrelation zwischen Zufriedenheit und Freiheit
+========================================================
+
+```{r echo = FALSE}
+happiness_freedom
+```
