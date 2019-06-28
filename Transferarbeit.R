@@ -1,78 +1,81 @@
 #install.packages(c("ggplot2","magrittr","tidyr","stringr","dplyr","fread","tidyverse","readr","gapminder"))
-#install.packages("dplyr")
 
-library(magrittr)
 library(tidyr)
 library(stringr)
-library(fread)
 library(tidyverse)
-
+library(tibble)
 library(gapminder)
 library(ggplot2)
 library(dplyr)
 
-
-summary(gapminder)
-data(gapminder)
-max(gapminder$year)
-
-
 attach(gapminder)
-min(year)
-max(year)
 
-mean(pop)
-pop
-hist(lifeExp)
-hist(log(pop))
+data2017 <- as_tibble(read.csv("2017.csv"))
+data2017 <- data2017 %>%
+  rename(
+    happiness_score = Happiness.Score,
+    gdp_per_cap = Economy..GDP.per.Capita.,
+    lifeExp = Health..Life.Expectancy.
+  )
 
-
-
-plot(x=lifeExp,y=log(gdpPercap),main="Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007, alle Länder", xlab="Lebenserwartung in Jahren",ylab="BIP pro Kopf", col="black")
-
+summary <- summary(gapminder)
 
 
-# Lebenserwartung Schweiz 
-# Filter specific data
-switzerland <- filter(gapminder, gapminder$country=="Switzerland")
-usa <- filter(gapminder, gapminder$country=="United States")
-plot(x=switzerland$year,y=switzerland$lifeExp,type="l",ylim=c(68,100),main="Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007",xlab="Jahr",ylab="Lebenserwartung in Jahren") + geom_bar(stat ="identity") + ylim(NA,100)
-lines(x=usa$year,y=usa$lifeExp,type="l",ylim=c(68,100),main="Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007",xlab="Jahr",ylab="Lebenserwartung in Jahren",col="red") + geom_bar(stat ="identity") + ylim(NA,100)
-legend("topleft",
-       legend=c("Schweiz","USA"),
-       col=c("black","red"),
-       pch = c(17,19))
+gdp_lifeexp <- ggplot(data2017, aes(x=lifeExp, y=gdp_per_cap)) +
+  geom_point() +
+  ggtitle("Correlation between happiness and GDP per capita") +
+  xlab("Happiness Score") +
+  ylab("GDP per capita")
+gdp_lifeexp
 
 
-# TODO: plot 2 layer on the same line chart
-ggplot(gapminder, aes(x=gapminder$year)) +
-  geom_line(aes(y=switzerland$lifeExp), colour="red") +
-  geom_line(aes(y=usa$lifeExp), colour="green")
+# Entwicklung der Lebenserwartung Schweiz im Vergleich zu USA
+ch_usa <- filter(gapminder, country %in% c("Switzerland", "United States"))
+ch_usa_plot <- ggplot(ch_usa, aes(x = year, y = lifeExp, colour = country)) +
+  geom_line() +
+  scale_colour_manual(values = c("Switzerland" = "red","United States" = "green")) +
+  ggtitle("Entwicklung der Lebenserwartung Schweiz und USA 1952 - 2007") +
+  xlab("Jahr") +
+  ylab("Lebenserwartung in Jahren")
+ch_usa_plot
 
-
-
-
-# Bevölkerungsentwicklung
-plot(x=switzerland$year,y=switzerland$pop,type="l",main="Bevölkerungsentwicklung Schweiz 1952 - 2007", ylab="Bevölkerung",xlab="Jahr") + geom_bar(stat ="identity") + ylim(NA,100)
-
+# Bevölkerungsentwicklung Schweiz
+ch <- filter(gapminder, country %in% c("Switzerland"))
+population_development <- ggplot(ch, aes(x = year, y = pop)) +
+  geom_line() +
+  ggtitle("Entwicklung der Bevölkerung Schweiz und USA 1952 - 2007") +
+  xlab("Jahr") +
+  ylab("Bevölkerung")
+population_development
 
 
 # weitere Datenquelle
-data2017 <- read.csv("2017.csv")
-head(data2017)
-plot(x=data2017$Happiness.Score,y=data2017$Economy..GDP.per.Capita.,main="Zusammenhang der Zufriedenheit mit dem BIP pro Kopf",xlab="Zufriedenheits-Index",ylab="BIP pro Kopf")
 
+
+happiness_gdp <- ggplot(data2017, aes(x=happiness_score, y=gdp_per_cap)) +
+  geom_point() +
+  ggtitle("Correlation between happiness and GDP per capita") +
+  xlab("Happiness Score") +
+  ylab("GDP per capita")
+happiness_gdp
+
+happiness_freedom <- ggplot(data2017, aes(x=happiness_score, y=Freedom)) +
+  geom_point() +
+  ggtitle("Correlation between happiness and freedom") +
+  xlab("Happiness Score") +
+  ylab("Freedom")
+happiness_freedom
 
 # Top 10 GDP - Country, 2017
-data2017_sorted <- data2017[order(-data2017$Economy..GDP.per.Capita.),]
-data2017_sorted <- head(data2017_sorted,n=10L)data2017_sorted
-data2017_sorted
-barplot(data2017_sorted$Economy..GDP.per.Capita., main="Top 10 Länder, BIP pro Kopf", names.arg=data2017_sorted$Country)
+data2017_sorted <- data2017[order(-data2017$gdp_per_cap),]
+data2017_sorted <- head(data2017_sorted,n=10L)
+top10_gdp_countries <- ggplot(data2017_sorted, aes(x=reorder(Country, -gdp_per_cap),y=gdp_per_cap)) +
+  geom_bar(stat="identity", color="white", fill="black") +
+  ggtitle("Top 10 Economies by GDP - 2007") +
+  xlab("Country") +
+  ylab("GDP per capita")
+
 
 
 # Zusammenhang zwischen Korruption und Zufriedenheits-Index
-plot(x=data2017$Happiness.Score,y=log(data2017$Freedom),main="Zusammenhang zwischen Zufriedenheit und Freiheit", xlab="Zufriedenheits-Index",ylab="Freiheits-Index", col="black")
-
-
-
-
+#happiness_freedom <- plot(x=data2017$Happiness.Score,y=log(data2017$Freedom),main="Zusammenhang zwischen Zufriedenheit und Freiheit", xlab="Zufriedenheits-Index",ylab="Freiheits-Index", col="black")

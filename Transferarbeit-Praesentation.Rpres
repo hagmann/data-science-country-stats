@@ -4,44 +4,73 @@ author: Simon Hagmann
 date: 27.06.2019
 autosize: true
 
+```{r echo = FALSE}
+source("Transferarbeit.R")
+```
+
 Hypothese
 ========================================================
 
-- Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007, alle Länder
+- Top 10 Länder, BIP pro Kopf
 - Entwicklung der Lebenserwartung Schweiz und USA 1952 - 2007
+- Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007, alle Länder
 - Bevölkerungsentwicklung Schweiz 1952 - 2007
 - Zusammenhang der Zufriedenheit mit dem BIP pro Kopf
-- Top 10 Länder, BIP pro Kopf
 - Zusammenhang zwischen Zufriedenheit und Freiheit
 
 
 
-
-Datenherkunft
-========================================================
-
 Verwendete Datensätze
+========================================================
 
 - gapminder
 - kaggle - World Bank GDP ranking
 - kaggle - World Happiness Report
 
 
+
 Summary aus gapminder
 ========================================================
 
 ```{r}
-library(gapminder)
-summary(gapminder)
+summary
 ```
+
+
+
+Top 10 Economies by GDP - 2007
+========================================================
+
+```{r echo = FALSE, fig.width = 10, fig.height = 5, out.width = "100%"}
+top10_gdp_countries
+```
+
+
+
+
+Entwicklung der Lebenserwartung Schweiz und USA 1952 - 2007
+========================================================
+
+```{r echo = FALSE, fig.width = 10, fig.height = 5, out.width = "100%"}
+ch_usa_plot
+```
+
+
 
 Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007
 ========================================================
 
-```{r, echo=FALSE, out.width="60%"}
-library(gapminder)
-attach(gapminder)
-plot(x=lifeExp,y=log(gdpPercap),main="", xlab="Lebenserwartung in Jahren",ylab="BIP pro Kopf", col="black")
+```{r echo = FALSE, fig.width = 10, fig.height = 5, out.width = "100%"}
+gdp_lifeexp
+```
+
+
+
+Bevölkerungsentwicklung Schweiz 1952 - 2007
+========================================================
+
+```{r echo = FALSE, fig.width = 10, fig.height = 5, out.width = "100%"}
+population_development
 ```
 
 
@@ -49,38 +78,11 @@ plot(x=lifeExp,y=log(gdpPercap),main="", xlab="Lebenserwartung in Jahren",ylab="
 Zusammenhang der Zufriedenheit mit dem BIP pro Kopf
 ========================================================
 
-```{r, echo=FALSE, out.width="60%"}
-data2017 <- read.csv("2017.csv")
-plot(x=data2017$Happiness.Score,y=data2017$Economy..GDP.per.Capita.,xlab="Zufriedenheit",ylab="BIP pro Kopf")
+```{r echo = FALSE, fig.width = 10, fig.height = 5, out.width = "100%"}
+happiness_gdp
 ```
 
 
-
-
-
-
-
-Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007
-========================================================
-
-```{r, echo=FALSE, out.width="60%"}
-data2017 <- read.csv("2017.csv")
-plot(x=data2017$Happiness.Score,y=data2017$Economy..GDP.per.Capita.,main="Zusammenhang der Zufriedenheit mit dem BIP pro Kopf",xlab="Zufriedenheit",ylab="BIP pro Kopf")
-```
-
-
-
-
-
-Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007
-========================================================
-
-```{r, echo=TRUE}
-library(gapminder)
-switzerland <- filter(gapminder, gapminder$country=="Switzerland")
-plot(x=switzerland$year,y=switzerland$lifeExp,type="l",ylim=c(68,100)) + geom_bar(stat ="identity") + ylim(NA,100)
-
-```
 
 
 

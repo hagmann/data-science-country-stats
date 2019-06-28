@@ -4,27 +4,27 @@ author: Simon Hagmann
 date: 27.06.2019
 autosize: true
 
+
+
 Hypothese
 ========================================================
 
-- Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007, alle Länder
+- Top 10 LÃ¤nder, BIP pro Kopf
 - Entwicklung der Lebenserwartung Schweiz und USA 1952 - 2007
-- Bevölkerungsentwicklung Schweiz 1952 - 2007
+- Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007, alle LÃ¤nder
+- BevÃ¶lkerungsentwicklung Schweiz 1952 - 2007
 - Zusammenhang der Zufriedenheit mit dem BIP pro Kopf
-- Top 10 Länder, BIP pro Kopf
 - Zusammenhang zwischen Zufriedenheit und Freiheit
 
 
 
-
-Datenherkunft
+Verwendete DatensÃ¤tze
 ========================================================
-
-Verwendete Datensätze
 
 - gapminder
 - kaggle - World Bank GDP ranking
 - kaggle - World Happiness Report
+
 
 
 Summary aus gapminder
@@ -32,8 +32,7 @@ Summary aus gapminder
 
 
 ```r
-library(gapminder)
-summary(gapminder)
+summary
 ```
 
 ```
@@ -55,43 +54,44 @@ summary(gapminder)
                                        
 ```
 
+
+
+Top 10 Economies by GDP - 2007
+========================================================
+
+<img src="Transferarbeit-Praesentation-figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="100%" />
+
+
+
+
+Entwicklung der Lebenserwartung Schweiz und USA 1952 - 2007
+========================================================
+
+<img src="Transferarbeit-Praesentation-figure/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="100%" />
+
+
+
 Zusammenhang Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007
 ========================================================
 
-<img src="Transferarbeit-Praesentation-figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="60%" />
+<img src="Transferarbeit-Praesentation-figure/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="100%" />
+
+
+
+BevÃ¶lkerungsentwicklung Schweiz 1952 - 2007
+========================================================
+
+<img src="Transferarbeit-Praesentation-figure/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" />
 
 
 
 Zusammenhang der Zufriedenheit mit dem BIP pro Kopf
 ========================================================
 
-<img src="Transferarbeit-Praesentation-figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" width="60%" />
+<img src="Transferarbeit-Praesentation-figure/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="100%" />
 
 
 
 
 
 
-
-Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007
-========================================================
-
-<img src="Transferarbeit-Praesentation-figure/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="60%" />
-
-
-
-
-
-Entwicklung der Lebenserwartung in der Schweiz 1952 - 2007
-========================================================
-
-
-
-
-```
-processing file: Transferarbeit-Praesentation.Rpres
-Quitting from lines 79-83 (Transferarbeit-Praesentation.Rpres) 
-Fehler in switzerland$year : $ operator is invalid for atomic vectors
-Ruft auf: knit ... withCallingHandlers -> withVisible -> eval -> eval -> plot
-Ausführung angehalten
-```
