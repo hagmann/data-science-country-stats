@@ -67,7 +67,7 @@ gdp_lifeexp
 
 
 
-Bevölkerungsentwicklung Schweiz 1952 - 2007
+Entwicklung der Bevölkerung Schweiz 1952 - 2007
 ========================================================
 
 ```{r echo = FALSE, fig.width = 10, fig.height = 5, out.width = "100%"}

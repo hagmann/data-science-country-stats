@@ -79,7 +79,7 @@ Korrelation Lebenserwartung und BIP pro Kopf weltweit zwischen 1952 und 2007
 
 
 
-Bevölkerungsentwicklung Schweiz 1952 - 2007
+Entwicklung der Bevölkerung Schweiz 1952 - 2007
 ========================================================
 
 <img src="Transferarbeit-Praesentation-figure/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="100%" />

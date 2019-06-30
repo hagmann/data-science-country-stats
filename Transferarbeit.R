@@ -30,7 +30,7 @@ top10_gdp_countries
 
 gdp_lifeexp <- ggplot(data2017, aes(x=lifeExp, y=gdp_per_cap)) +
   geom_point() +
-  ggtitle("Correlation between happiness and GDP per capita") +
+  ggtitle("Correlation between life expectation and GDP per capita") +
   xlab("Happiness Score") +
   ylab("GDP per capita")
 gdp_lifeexp
@@ -48,11 +48,13 @@ ch_usa_plot
 
 # Bevölkerungsentwicklung Schweiz
 ch <- filter(gapminder, country %in% c("Switzerland"))
-population_development <- ggplot(ch, aes(x = year, y = pop)) +
+population_development <- ggplot(ch, aes(x = year, y = pop/1e6)) +
+  ylim(4,10) +
   geom_line() +
-  ggtitle("Entwicklung der Bevölkerung Schweiz und USA 1952 - 2007") +
+  ggtitle("Entwicklung der Bevölkerung Schweiz 1952 - 2007") +
   xlab("Jahr") +
-  ylab("Bevölkerung")
+  ylab("Bevölkerung in Mio")
+
 population_development
 
 
@@ -70,4 +72,3 @@ happiness_freedom <- ggplot(data2017, aes(x=happiness_score, y=Freedom)) +
   xlab("Happiness Score") +
   ylab("Freedom")
 happiness_freedom
-
